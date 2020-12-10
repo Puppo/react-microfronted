@@ -5,13 +5,13 @@ on:
     branches:
       - main
     paths:
-      - "packages/container/**"
+      - "package/container/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      working-directory: packages/container
+      working-directory: package/container
 
     steps:
       - uses: actions/checkout@v2
