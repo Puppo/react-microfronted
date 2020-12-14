@@ -7,6 +7,10 @@ on:
     paths:
       - "packages/container/**"
 
+defaults:
+  run:
+    working-directory: packages/container
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,4 +32,3 @@ jobs:
       - name: Copy files to the test website with the AWS CLI
         run: |
           aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
-        working-directory: packages/container
